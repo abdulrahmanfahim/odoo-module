@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_direct_print_root" name="Direct Print" web_icon="direct_print,static/description/icon.png"/>
+    
+    <menuitem id="menu_direct_print_dashboard" name="Dashboard" parent="menu_direct_print_root" action="action_direct_print_dashboard" sequence="1"/>
+    <menuitem id="menu_direct_print_agents" name="Agents" parent="menu_direct_print_root" action="action_direct_print_agent" sequence="10"/>
+    
+    <menuitem id="menu_direct_print_config" name="Configuration" parent="menu_direct_print_root" sequence="100"/>
+    <menuitem id="menu_direct_print_settings" name="Settings" parent="menu_direct_print_config" action="res_config_settings_action" sequence="10"/>
+</odoo>
