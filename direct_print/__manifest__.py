@@ -14,10 +14,10 @@
     'depends': ['base', 'web'],
     'data': [
         'security/ir.model.access.csv',
+        'views/direct_print_agent_views.xml',
         'views/res_config_settings_views.xml',
         'views/direct_print_dashboard_actions.xml',
         'views/direct_print_menus.xml',
-        'views/direct_print_agent_views.xml',
     ],
     'assets': {
         'web.assets_backend': [
