@@ -12,13 +12,13 @@
                     <div class="row mt16 o_settings_container" id="direct_print_settings">
                         <div class="col-12 col-lg-6 o_setting_box">
                             <div class="o_setting_right_pane">
-                                <label for="print_agent_url"/>
+                                <label for="agent_url"/>
                                 <div class="text-muted">
-                                    Default URL for the local Java print agent
+                                    URL for the local print agent
                                 </div>
                                 <div class="content-group">
                                     <div class="mt16">
-                                        <field name="print_agent_url"/>
+                                        <field name="agent_url" class="oe_inline" placeholder="e.g. http://localhost:8080"/>
                                     </div>
                                 </div>
                             </div>

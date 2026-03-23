@@ -3,8 +3,8 @@ from odoo import fields, models
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    print_agent_url = fields.Char(
+    agent_url = fields.Char(
         string="Print Agent URL",
-        config_parameter='direct_print.print_agent_url',
-        default="http://localhost:8080"
+        config_parameter='direct_print.agent_url',
+        help="The URL of the Direct Print Agent (e.g. http://localhost:8080)"
     )

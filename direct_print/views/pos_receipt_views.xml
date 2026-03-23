@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_pos_receipt_tree" model="ir.ui.view">
+            <field name="name">pos.receipt.tree</field>
+            <field name="model">pos.receipt</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="create_date"/>
+                    <button name="action_print_receipt" type="object" string="Print" class="oe_highlight" icon="fa-print"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_pos_receipt_form" model="ir.ui.view">
+            <field name="name">pos.receipt.form</field>
+            <field name="model">pos.receipt</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="create_date"/>
+                        </group>
+                        <field name="content" readonly="1"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_pos_receipt_search" model="ir.ui.view">
+            <field name="name">pos.receipt.search</field>
+            <field name="model">pos.receipt</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="content"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_pos_receipt" model="ir.actions.act_window">
+            <field name="name">POS Receipts</field>
+            <field name="res_model">pos.receipt</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem
+            id="menu_pos_receipt"
+            name="Archived Receipts"
+            parent="point_of_sale.menu_point_root"
+            action="action_pos_receipt"
+            sequence="100"
+            groups="point_of_sale.group_pos_user"/>
+    </data>
+</odoo>
