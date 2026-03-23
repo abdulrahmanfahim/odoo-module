@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <template id="direct_print_dashboard">
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="direct_print.direct_print_dashboard">
         <div class="o_dashboards">
             <div class="container-fluid">
                 <div class="row">
@@ -15,7 +15,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Total Agents</h5>
                                 <p class="card-text h2">
-                                    <t t-esc="len(env['direct.print.agent'].search([]))"/>
+                                    <!-- We will refine this later with JS data -->
+                                    <t t-esc="props.totalAgents || 0"/>
                                 </p>
                             </div>
                         </div>
@@ -25,7 +26,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Active Agents</h5>
                                 <p class="card-text h2">
-                                    <t t-esc="len(env['direct.print.agent'].search([('active', '=', True)]))"/>
+                                    <t t-esc="props.activeAgents || 0"/>
                                 </p>
                             </div>
                         </div>
@@ -33,5 +34,5 @@
                 </div>
             </div>
         </div>
-    </template>
-</odoo>
+    </t>
+</templates>
