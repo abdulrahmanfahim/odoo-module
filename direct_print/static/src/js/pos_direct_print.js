@@ -16,18 +16,27 @@ patch(ReceiptScreen.prototype, {
             "ir.config_parameter",
             "get_param",
             ["direct_print.print_agent_url"]
-        );
+        ) || "http://localhost:8080";
 
-        if (printAgentUrl) {
-            const receiptString = this.orderReceipt.el.innerText;
+        const receiptEl = document.querySelector('.pos-receipt');
+        if (printAgentUrl && receiptEl) {
+            const receiptHtml = receiptEl.innerHTML;
             try {
-                const response = await fetch(`${printAgentUrl}/api/print/raw`, {
+                // 1. Send receipt content as HTML
+                const printResponse = await fetch(`${printAgentUrl}/api/print/html`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ content: receiptString }),
+                    body: JSON.stringify({ content: receiptHtml }),
                 });
-                
-                if (response.ok) {
+
+                if (printResponse.ok) {
+                    // 2. Feed and Cut
+                    await fetch(`${printAgentUrl}/api/print/cut`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({}),
+                    });
+
                     this.notification.add("Receipt sent to local printer", { type: "success" });
                     return;
                 }
