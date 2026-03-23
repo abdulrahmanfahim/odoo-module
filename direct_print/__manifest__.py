@@ -11,7 +11,7 @@
         - Configurable print agent endpoint
     """,
     'author': 'Abdu',
-    'depends': ['base', 'web'],
+    'depends': ['base', 'web', 'point_of_sale'],
     'data': [
         'security/ir.model.access.csv',
         'views/direct_print_agent_views.xml',
@@ -23,6 +23,7 @@
         'web.assets_backend': [
             'direct_print/static/src/xml/direct_print_dashboard.xml',
             'direct_print/static/src/js/direct_print_dashboard.js',
+            'direct_print/static/src/js/pos_direct_print.js',
         ],
     },
     'installable': True,
