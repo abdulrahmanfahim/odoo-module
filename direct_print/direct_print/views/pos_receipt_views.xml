@@ -7,11 +7,11 @@
             <field name="model">pos.receipt</field>
             <field name="arch" type="xml">
                 <list string="POS Receipts">
-                    <list string="POS Receipts">
-                                        <field name="name"/>
-                                        <field name="create_date"/>
-                                        <button name="action_print_receipt" type="object" string="Print" class="oe_highlight" icon="fa-print"/>
-                                    </list>
+                    <field name="name"/>
+                    <field name="create_date"/>
+                    <button name="action_print_receipt" type="object" string="Print" class="oe_highlight" icon="fa-print"/>
+                </list>
+            </field>
         </record>
 
         <!-- Form View -->
